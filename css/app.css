@@ -25,6 +25,10 @@ h1 {
     font-size: 20px;
     color: #262626;
 }
+#intro img {
+    width: 180px;
+    height: 180px;
+}
 .project {
     text-align: center;
     padding: 200px 0;
@@ -39,15 +43,33 @@ h1 {
     margin: 0 auto;
     color: #294D67;
 }
-#project01 h2 {
+#project01 h2,
+#feature01 h2 {
     color: #3DB3CE;
 }
-#project02 h2 {
+#project02 h2,
+#feature02 h2 {
     color: #75C695;
 }
-#project03 h2 {
+#project03 h2,
+#feature03 h2 {
     color: #F5876F;
 }
+#features {
+    display: flex;
+    padding: 40px;
+    text-align: center;
+}
+.feature {
+    padding: 0 40px;
+}
+#project02 {
+    transition: background-color 0.3s linear;
+}
+#project02.active {
+    background-color: #e9f0f2;
+}
+
 #main {
     position: relative;
     background-color: #FFF;
@@ -97,4 +119,24 @@ h1 {
 }
 .footer-container a {
     color: rgba(255, 255, 255, 0.5); 
+}
+
+@media only screen and (max-width: 600px) {
+    #intro img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #features {
+        flex-direction: column;
+    }
+    .feature {
+        padding: 50px 0;
+        border-bottom: 1px #ebebeb solid;
+    }
+    .feature:last-child {
+        border: none;
+    }
 }
