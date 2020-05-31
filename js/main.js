@@ -35,16 +35,35 @@ function init(){
     //     .from('.bcg', {duration: 2, y: '-30%'}, 0);
 
     // Pin example
-    gsap.to(['#intro h1', '#intro p'], {
-        autoAlpha: 0,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '#intro .content',
-            start: 'top top+=5%',
-            pin: true,
-            scrub: true,
-            markers: true
-        }
+    // gsap.to(['#intro h1', '#intro p'], {
+    //     autoAlpha: 0,
+    //     ease: 'none',
+    //     scrollTrigger: {
+    //         trigger: '#intro .content',
+    //         start: 'top top+=5%',
+    //         pin: true,
+    //         scrub: true,
+    //         markers: true
+    //     }
+    // });
+
+    // Triggering multiple sections
+    const projects = document.querySelectorAll('.project');
+
+    projects.forEach((project) => {
+
+        gsap.from(project, {
+            opacity: 0,
+            yPercent: 5,
+            scrollTrigger: {
+                trigger: project.querySelector('img'),
+                start: 'top bottom-=300',
+                end: 'top center',
+                toggleActions: 'play none none reverse',
+                markers: true
+            }
+        })
+
     });
 
 }
